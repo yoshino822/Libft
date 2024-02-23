@@ -17,15 +17,13 @@ CC = gcc
 
 CFLAG = -Wall -Wextra -Werror
 
-ARFLAG = rcs
-
 %.o: %.c
 	${CC} ${CFLAG} -c $< -o $@
 
 all: ${NAME}
 
 ${Name}: ${OBJ}
-	ar ${ARFLAG} ${NAME} ${OBJ}
+	ar rcs ${NAME} ${OBJ}
 	@echo "${NAME} created"
 
 clean:
@@ -33,7 +31,7 @@ clean:
 	@echo "${OBJ} deleted"
 
 fclean: clean
-	clean ${NAME}
+	rm -f ${NAME}
 	@echo "${NAME} deleted"
 
 re: fclean all
