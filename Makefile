@@ -17,12 +17,26 @@ CC = gcc
 
 CFLAG = -Wall -Wextra -Werror
 
+ARFLAG = rcs
+
+%.o: %.c
+	${CC} ${CFLAG} -c $< -o $@
+
 all: ${NAME}
 
-clean = rm -f ${OBJ}
+${Name}: ${OBJ}
+	ar ${ARFLAG} ${NAME} ${OBJ}
+	@echo "${NAME} created"
 
-fclean = clean ${NAME}
+clean:
+	rm -f ${OBJ}
+	@echo "${OBJ} deleted"
+
+fclean: clean
+	clean ${NAME}
+	@echo "${NAME} deleted"
 
 re: fclean all
+	@echo "${NAME} ${OBJ} returned"
 
 .PHONY: all clean fclean re
