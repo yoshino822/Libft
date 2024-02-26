@@ -1,22 +1,11 @@
-#include <unistd.h>
 
-void	ft_putstr(char *str)
+
+#include "libft.h"
+
+void	ft_putstr_fd(char *s,int fd)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (s)
 	{
-		i++;
-	}
-	write(1, str, i);
+		write(fd, s, ft_strlen(s));
+	};
 }
-/*
-int	main(void)
-{
-	char *str;
-
-	str = "Hello";
-	ft_putstr(str);
-	return (0);
-}*/

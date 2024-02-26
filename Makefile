@@ -22,7 +22,7 @@ CFLAG = -Wall -Wextra -Werror
 
 all: ${NAME}
 
-${Name}: ${OBJ}
+${NAME}: ${OBJ}
 	ar rcs ${NAME} ${OBJ}
 	@echo "${NAME} created"
 
