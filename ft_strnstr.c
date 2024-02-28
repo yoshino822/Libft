@@ -2,28 +2,42 @@
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
+char	*ft_strnstr(const char *str, const char *key, size_t size)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
-	j = 0;
-	if (needle == NULL || needle[0] == '\0')
-		return ((char *)haystack);
-	while (haystack[i] != '\0' && i < n)
+	if (key == NULL || key[0] == '\0')
 	{
-		if (haystack[i] == needle[j])
+		return ((char *)str);
+	}
+	while (str[i] != '\0' && i < size)
+	{
+		j = 0;
+		if (str[i] == key[j])
 		{
-			while (haystack[i + j] == needle[j] && i + j < n)
+			while (str[i + j] == key[j] && i + j < size)
 			{
-				if (needle[j + 1] == '\0')
-					return ((char *)haystack + i);
+				if (key[j + 1] == '\0')
+				{
+					return ((char *)str + i);
+				}
 				j++;
 			}
-			j = 0;
 		}	
 		i++;
 	}
 	return (NULL);
 }
+/*
+int main()
+{
+	char	*str;
+	char	*key;
+
+	str = "Koda and Luna";
+	key = "Luna";
+	printf("%s\n", ft_strnstr(str, key, 13));
+	return (0);
+}*/
