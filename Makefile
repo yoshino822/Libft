@@ -19,7 +19,6 @@ ${NAME}: ${OBJ}
 	ar rcs ${NAME} ${OBJ}
 	@echo "${NAME} created"
 
-
 clean:
 	rm -f ${OBJ}
 	rm -f ${EXE}
