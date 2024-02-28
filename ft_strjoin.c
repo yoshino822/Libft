@@ -6,23 +6,35 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		j;
-	char	*str;
+	char	*result;
 
 	i = 0;
 	j = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (str == NULL)
-		return (NULL);
-	while (s1[i] != '\0')
+	result = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+
+	while (s1[i])
 	{
-		str[i] = s1[i];
+		result[i] = s1[i];
 		i++;
 	}
-	while (s2[j] != '\0')
+	while (s2[j])
 	{
-		str[i + j] = s2[j];
+		result[i + j] = s2[j];
 		j++;
 	}
-	str[i + j] = '\0';
-	return (str);
+	result[i + j] = '\0';
+	return (result);
 }
+/*
+int	main()
+{
+	char	*str1;
+	char	*str2;
+
+	str1 = "Koda";
+	str2 = "Luna";
+
+	printf("%s", ft_strjoin(str1, str2));
+	
+	return (0);
+}*/

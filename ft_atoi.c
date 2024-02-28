@@ -24,3 +24,16 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
+/*
+int	main()
+{
+    char str1[] = "---+--+1234ab567";
+    char str2[] = "   -456  ";
+    char str3[] = "789";
+
+    printf("%s: %d\n", str1, ft_atoi(str1));
+    printf("%s: %d\n", str2, ft_atoi(str2));
+    printf("%s: %d\n", str3, ft_atoi(str3));
+
+    return 0;
+}*/

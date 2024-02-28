@@ -26,3 +26,13 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	dest[i] = '\0';
 	return (dest_len + src_len);
 }
+/*
+int	main(void)
+{
+	char dest[20] = "Hello, ";
+	char src[] = "World!";
+	int total_length = ft_strlcat(dest, src, 15);
+	printf("Concatenated String: %s\n", dest);
+	printf("Total Length: %d\n", total_length);
+	return 0;
+}*/

@@ -2,17 +2,31 @@
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *list, int fill_byte, size_t size)
 {
 	size_t	i;
 	char	*str;
 
 	i = 0;
-	str = s;
-	while (i < n)
+	str = list;
+	while (i < size)
 	{
-		str[i] = c;
+		str[i] = fill_byte;
 		i++;
 	}
-	return (s);
+	return (list);
 }
+/*
+int main()
+{
+	
+	void *test;
+
+	test = malloc(sizeof(char) * 10);
+
+	ft_memset(test, 'a', 8);
+
+	return 0;
+}
+*/
+
