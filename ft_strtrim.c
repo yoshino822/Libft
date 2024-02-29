@@ -2,7 +2,7 @@
 
 #include "libft.h"
 
-static int	ft_char_in_set(char c, char const *set)
+static int	ft_find_set(char c, char const *set)
 {
 	size_t	i;
 
@@ -10,7 +10,9 @@ static int	ft_char_in_set(char c, char const *set)
 	while (set[i])
 	{
 		if (set[i] == c)
+		{
 			return (1);
+		}
 		i++;
 	}
 	return (0);
@@ -19,22 +21,48 @@ static int	ft_char_in_set(char c, char const *set)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
-	size_t	i;
 	size_t	start;
 	size_t	end;
+	size_t	i;
 
 	start = 0;
-	while (s1[start] && ft_char_in_set(s1[start], set))
-		start++;
-	end = ft_strlen(s1);
-	while (end > start && ft_char_in_set(s1[end - 1], set))
-		end--;
+	while (s1[start])
+	{
+		if (ft_find_set(s1[start], set))
+			start++;
+		else
+			break;
+	}
+	end = ft_strlen((char*)s1);
+	while (end > start)
+	{
+		if (ft_find_set(s1[end - 1], set))
+			end--;
+		else
+			break;
+	}
 	str = (char*)malloc(sizeof(*s1) * (end - start + 1));
-	if (!str)
+	if (str == NULL)
 		return (NULL);
-	i = 0;
-	while (start < end)
-		str[i++] = s1[start++];
-	str[i] = 0;
+	ft_memcpy(str, s1 + start, end - start);
+	str[end - start] = '\0';
 	return (str);
 }
+/*
+int main()
+{
+	const char *s1 = "   Koda Luna Obi   ";
+	const char *set = " ";
+	char *trimmed_str = ft_strtrim(s1, set);
+	if (trimmed_str != NULL)
+	{
+		printf("Original string: \"%s\"\n", s1);
+		printf("Trimmed string: \"%s\"\n", trimmed_str);
+		free(trimmed_str);
+	}
+	else
+	{
+		printf("Memory allocation failed.\n");
+	}
+	return 0;
+}*/
