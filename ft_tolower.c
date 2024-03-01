@@ -13,7 +13,6 @@ int	ft_tolower(int c)
 /*
 int	main(void)
 {
-	 printf("%d\n", ft_tolower('A'));
-
+	 printf("%c\n", ft_tolower('A'));
 	 return (0);
 }*/

@@ -15,10 +15,11 @@ void	*ft_calloc(size_t count, size_t size)
 	return (arr);
 }
 /*
-int main()
+int main(void)
 {
     char *test;
 
 	test = ft_calloc(10, sizeof(char));
 	return (0);
 }*/
+

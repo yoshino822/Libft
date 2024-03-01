@@ -22,11 +22,12 @@ char	*ft_strrchr(const char *str, int c)
 	return (0);
 }
 /*
-int main()
+int main(void)
 {
-	char *str;
+	const char str[] = "Koda+Luna+Obi";
+	const char ch = '+';
 
-	str = "Koda";
-	printf("%s", ft_strrchr(str, 'o'));
+	printf("String after \'%c\' is: %s\n", ch, ft_strrchr(str, ch));
+
 	return (0);
 }*/

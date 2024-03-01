@@ -19,12 +19,12 @@ char	*ft_strchr(const char *str, int c)
 	return (0);
 }
 /*
-int main()
+int main(void)
 {
-	char	*str;
+	const char str[] = "Koda+Luna+Obi";
+	const char ch = '+';
 
-	str = "Koda";
-	printf("%s", ft_strchr(str, 'o'));
-	return (0);
-}
-*/
+	printf("String after \'%c\' is: %s\n", ch, ft_strchr(str, ch));
+
+	return(0);
+}*/

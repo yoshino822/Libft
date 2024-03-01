@@ -7,7 +7,7 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
 		i++;
 	}
@@ -16,12 +16,9 @@ int	ft_strlen(char *str)
 /*
 int	main(void)
 {
-	int	length_str;
 	char	*str;
 
 	str = "Koda";
-	ft_strlen(str);
-	length_str = ft_strlen(str);
-	printf("The length of this word is: %d", length_str);
+	printf("The length of this word is: %d", ft_strlen(str));
 	return (0);
 }*/

@@ -22,13 +22,13 @@ int	ft_memcmp(const void *s1, const void *s2, size_t size)
 	return (0);
 }
 /*
-int main()
+int	main(void)
 {
-	char	*s1;
-	char	*s2;
+	char s1[] = "Hello\0 Koda";
+	char s2[] = "Hello\0 Luna";
 
-	s1 = "Koda";
-	s2 = "Koda";
-	printf("%d\n", ft_memcmp(s1, s2, 5));
+	printf("%d\n", ft_memcmp(s2, s1, 10));
+
 	return (0);
-}*/
+}
+*/

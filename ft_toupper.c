@@ -13,7 +13,6 @@ int	ft_toupper(int c)
 /*
 int	main(void)
 {
-	 printf("%d\n", ft_toupper('a'));
-
+	 printf("%c\n", ft_toupper('a'));
 	 return (0);
 }*/

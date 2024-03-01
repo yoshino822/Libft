@@ -31,13 +31,14 @@ char	*ft_strnstr(const char *str, const char *key, size_t size)
 	return (NULL);
 }
 /*
-int main()
+int main(void)
 {
 	char	*str;
 	char	*key;
 
 	str = "Koda and Luna";
 	key = "Luna";
-	printf("%s\n", ft_strnstr(str, key, 13));
+	printf("%s\n", ft_strnstr(str, key, 15));
+
 	return (0);
 }*/

@@ -33,16 +33,12 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 /*
 int	main()
 {
-	char	*src;
-	char	*dest;
+	 char dest[] = "Koda";
+   const char src[]  = "Luna";
 
-	src = "Koda";
+   printf("Before ft_memmove dest = %s, src = %s\n", dest, src);
+   ft_memmove(dest, src, 4);
+   printf("After ft_memmove dest = %s, src = %s\n", dest, src);
 
-	dest = malloc(sizeof(char) * 5);
-	dest[0] = 'L';
-	dest[1] = 'u';
-	dest[2] = 'n';
-	dest[3] = 'a';
-	printf("%s\n", (char *) ft_memmove(dest, src, 4));
-	return 0;
+   return(0);
 }*/

@@ -25,21 +25,14 @@ void	*ft_memcpy(void *dest, const void *src, size_t size)
 	return (deststr);
 }
 /*
-int main()
+int main(void)
 {
-	
-	void *test;
-	char *src;
-	src = malloc(sizeof(char) * 10);
-	int i = 0;
-	while (i < 10) {
-		src[i] = 'a';
-	}
+	char src[] = "Hello, World!";
+	char dest[20];
+	unsigned int size = 10;
 
-	test = malloc(sizeof(char) * 10);
+	ft_memcpy(dest, src, size);
+	printf("Copied String: %s\n", dest);
 
-	ft_memcpy(test, src, 8);
-
-	return 0;
-}
-*/
+	return (0);
+}*/

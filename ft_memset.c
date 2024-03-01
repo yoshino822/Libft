@@ -17,16 +17,14 @@ void	*ft_memset(void *list, int fill_byte, size_t size)
 	return (list);
 }
 /*
-int main()
+int main(void)
 {
-	
-	void *test;
+	char str[50] = "Koda and Luna";
+	printf("\nBefore ft_memset(): %s\n", str);
 
-	test = malloc(sizeof(char) * 10);
+	// Fill 5 characters starting from str[4] with '+'
+	ft_memset(str + 4, '+', 5*sizeof(char));
 
-	ft_memset(test, 'a', 8);
-
-	return 0;
-}
-*/
-
+	printf("After ft_memset():  %s", str);
+	return (0);
+}*/

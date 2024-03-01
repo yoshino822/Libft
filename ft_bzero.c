@@ -16,15 +16,14 @@ void	ft_bzero(void *list, size_t size)
 	}
 }
 /*
-int main()
+int main(void)
 {
-	
-	void *test;
+	char str[50] = "Koda and Luna";
+	printf("\nBefore ft_bzero(): %s\n", str);
 
-	test = malloc(sizeof(char) * 10);
+	// Zero a byte string
+	ft_bzero(str, 4*sizeof(char));
 
-	ft_bzero(test, 8);
-
-	return 0;
-}
-*/
+	printf("After ft_bzero():  %s", str);
+	return (0);
+}*/

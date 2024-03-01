@@ -20,10 +20,11 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 /*
 int	main(void)
 {
-	char s1[] = "Hello";
-	char s2[] = "HelloWorld";
+	char s1[] = "Hello\0 Koda";
+	char s2[] = "Hello\0 Luna";
 
-	ft_strncmp(s2, s1, 5);
-	printf("%d\n", ft_strncmp(s2, s1, 5));
-	return 0;
-}*/
+	printf("%d\n", ft_strncmp(s2, s1, 20));
+
+	return (0);
+}
+*/

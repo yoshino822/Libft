@@ -3,6 +3,18 @@
 
 #include "libft.h"
 
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
 char	*ft_strcpy(char *str, char *src)
 {
 	int	i;
@@ -40,5 +52,6 @@ int main(void)
    printf("%s\n", ft_strdup(src));
    printf("test1: %s\n", test1);
    printf("test2: %s\n", test2);
+
    return 0;
 }*/

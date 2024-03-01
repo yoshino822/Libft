@@ -20,11 +20,12 @@ void	*ft_memchr(const void *list, int c, size_t size)
 	return (NULL);
 }
 /*
-int main()
+int main(void)
 {
-	char	*str;
+	const char str[] = "Koda+Luna+Obi";
+	const char ch = '+';
 
-	str = "Koda";
-	printf("%s\n", ft_memchr((char*)str, 'o', 2));
-	return (0);
+	printf("String after \'%c\' is: %s\n", ch, ft_memchr(str, ch, 5));
+
+	return(0);
 }*/
