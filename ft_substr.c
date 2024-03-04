@@ -23,11 +23,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (result);
 }
 /*
-int	main()
+int	main(void)
 {
 	char *src = "Koda and Luna";
-
+	//Copy 4 characters of src (starting from position 9)
 	printf("%s\n", ft_substr(src,9, 4));
 
-	return 0;
-}*/
+	return (0);
+}
+*/

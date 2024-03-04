@@ -26,7 +26,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (result);
 }
 /*
-int	main()
+int	main(void)
 {
 	char	*str1;
 	char	*str2;
@@ -34,7 +34,7 @@ int	main()
 	str1 = "Koda";
 	str2 = "Luna";
 
-	printf("%s", ft_strjoin(str1, str2));
+	printf("%s\n", ft_strjoin(str1, str2));
 	
 	return (0);
 }*/

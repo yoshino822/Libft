@@ -106,3 +106,8 @@ char	**ft_split(char const *s, char c)
 	}
 	return (str);
 }
+
+void main() {
+	char *str = "koda luna obi";
+	ft_split(str, ' ');
+}

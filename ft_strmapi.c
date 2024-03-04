@@ -31,9 +31,9 @@ char map_function(unsigned int index, char c)
 	return (c);
 }
 
-int main()
+int main(void)
 {
-	const char *s = "koda";
+	const char *s = "kodaLunaObi";
 	char *mapped_str = ft_strmapi(s, &map_function);
 	if (mapped_str != NULL)
 	{

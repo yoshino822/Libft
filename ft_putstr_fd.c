@@ -14,9 +14,9 @@ void ft_putstr_fd(char *s,int fd)
 	write(fd, s, i);
 }
 /*
-int	main()
+int	main(void)
 {
-	char   str[] = "Hello";
+	char   str[] = "Koda";
 	ft_putstr_fd(str, 1);
 	return (0);
 }*/

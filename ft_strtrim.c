@@ -49,7 +49,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str);
 }
 /*
-int main()
+int main(void)
 {
 	const char *s1 = "   Koda Luna Obi   ";
 	const char *set = " ";

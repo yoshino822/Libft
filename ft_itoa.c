@@ -58,7 +58,7 @@ char	*ft_itoa(int n)
 	return (str);
 }
 /*
-int main()
+int main(void)
 {
 	int number = 12345;
 	char *str = ft_itoa(number);

@@ -20,12 +20,10 @@ void print_index_and_char(unsigned int index, char *c)
 	printf("Character at index %u: %c\n", index, *c);
 }
 
-int main()
+int main(void)
 {
-	char str[] = "Koda & Luna";
+	const char *s = "Koda";
+	ft_striteri(s, &print_index_and_char);
 
-	printf("Original string: %s\n", str);
-	ft_striteri(str, &print_index_and_char);
-	printf("Modified string: %s\n", str);
-	return 0;
+	return (0);
 }*/
