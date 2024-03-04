@@ -63,7 +63,7 @@ char	**ft_split(char const *s, char c)
 	result[i] = 0;
 	return (result);
 }
-
+/*
 int main(void)
 {
 	char const *s = "Koda,Luna,Obi";
@@ -87,5 +87,5 @@ int main(void)
 
 	free(result);
 
-	return 0;
-}
+	return (0);
+}*/
