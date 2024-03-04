@@ -2,112 +2,90 @@
 
 #include "libft.h"
 
-static void	ft_freeup(char *strs)
-{
-	int	i;
-
-	i = 0;
-	while (strs[i] != '\0')
-	{
-		free(strs);
-		i++;
-	}
-	free(strs);
-}
-
-static int	ft_countword(char *str, char c)
+static int	num_words(char const *s, char c)
 {
 	int	i;
 	int	count;
 
 	i = 0;
 	count = 0;
-	while (str[i])
+	while (s[i])
 	{
-		if (str[i] == c)
-		{
-			i++;
-		}
-		else
-		{
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == 0))
 			count++;
-			while (str[i] != c && str[i])
-			{
-				i++;
-			}
-		}
+		i++;
 	}
 	return (count);
 }
 
-static void	ft_strcpy(char *word, char *str, char c, int j)
+static char	*attach_str(char const *s, char c)
 {
-	int	i;
+	int		i;
+	char	*str;
 
 	i = 0;
-	while (str[j] != '\0' && str[j] == c)
-		j++;
-	while (str[j + i] != c && str[j + i] != '\0')
-	{
-		word[i] = str[j + i];
+	while (s[i] && s[i] != c)
 		i++;
-	}
-	word[i] = '\0';
-}
-
-static char	*ft_stralloc(char *str, char c, int *k)
-{
-	char	*word;
-	int		j;
-
-	j = *k;
-	word = NULL;
-	while (str[*k] != '\0')
+	str = malloc(sizeof(char) * (i + 1));
+	if (str == NULL)
 	{
-		if (str[*k] != c)
-		{
-			while (str[*k] != '\0' && str[*k] != c)
-				*k += 1;
-			word = (char *)malloc(sizeof(char) * (*k + 1));
-			if (word == NULL)
-				return (NULL);
-			break ;
-		}
-		*k += 1;
+		free(str);
+		return (NULL);
 	}
-	ft_strcpy(word, str, c, j);
-	return (word);
+	ft_strlcpy(str, (char*)s, i + 1);
+	return (str);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**str;
 	int		i;
 	int		len;
-	int		pos;
+	char	**result;
 
-	if (s == NULL)
+	len = num_words(s, c);
+	result = malloc(sizeof(char *) * (len + 1));
+	if (result == NULL)
 		return (NULL);
 	i = 0;
-	pos = 0;
-	len = ft_countword((char *)s, c);
-	str = (char **)malloc(sizeof(char *) * (len + 1));
-	if (str == NULL)
-		return (NULL);
-	str[len] = NULL;
 	while (i < len)
 	{
-		str[i] = ft_stralloc(((char *)s), c, &pos);
-		if (str[i] == NULL)
+		while (s[0] == c)
+			s++;
+		result[i] = attach_str(s, c);
+		if (result[i] == NULL)
 		{
-			ft_freeup(str[i]);
+			free(result);
+			return (NULL);
 		}
+		s += ft_strlen(result[i]);
 		i++;
 	}
-	return (str);
+	result[i] = 0;
+	return (result);
 }
 
-void main() {
-	char *str = "koda luna obi";
-	ft_split(str, ' ');
+int main(void)
+{
+	char const *s = "Koda,Luna,Obi";
+	char c = ',';
+
+	char **result = ft_split(s, c);
+	if (result == NULL)
+	{
+		printf("Splitting failed!\n");
+		return (1);
+	}
+
+	printf("Split result:\n");
+	int i = 0;
+	while ( result[i] != NULL)
+	{
+		printf("%s\n", result[i]);
+		free(result[i]);
+		i++;
+	}
+
+	free(result);
+
+	return 0;
 }
