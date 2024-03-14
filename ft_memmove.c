@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybollen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/06 13:02:51 by ybollen           #+#    #+#             */
+/*   Updated: 2024/03/06 13:02:53 by ybollen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -9,16 +19,14 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 	size_t	i;
 
 	deststr = dest;
-	srcstr = src;
+	srcstr = (char *)src;
 	if (dest == NULL && src == NULL)
 	{
 		return (NULL);
 	}
 	if (deststr > srcstr)
 		while (size--)
-		{
 			deststr[size] = srcstr[size];
-		}
 	else
 	{
 		i = 0;

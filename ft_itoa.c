@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybollen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/06 11:36:42 by ybollen           #+#    #+#             */
+/*   Updated: 2024/03/06 11:36:45 by ybollen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -35,10 +45,10 @@ void	ft_negative_num(int n, int *sign, unsigned int *num, char *str)
 
 char	*ft_itoa(int n)
 {
-	char		*str;
+	char			*str;
 	unsigned int	num;
 	unsigned int	len;
-	int sign;
+	int				sign;
 
 	sign = 1;
 	len = ft_lensize(n);

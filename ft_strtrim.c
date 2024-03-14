@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybollen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/06 13:12:21 by ybollen           #+#    #+#             */
+/*   Updated: 2024/03/06 13:12:23 by ybollen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -18,12 +28,9 @@ static int	ft_find_set(char c, char const *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+size_t	find_start(char const *s1, char const *set)
 {
-	char	*str;
 	size_t	start;
-	size_t	end;
-	size_t	i;
 
 	start = 0;
 	while (s1[start])
@@ -31,17 +38,27 @@ char	*ft_strtrim(char const *s1, char const *set)
 		if (ft_find_set(s1[start], set))
 			start++;
 		else
-			break;
+			return (start);
 	}
-	end = ft_strlen((char*)s1);
+	return (start);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*str;
+	size_t	start;
+	size_t	end;
+
+	start = find_start(s1, set);
+	end = ft_strlen((char *)s1);
 	while (end > start)
 	{
 		if (ft_find_set(s1[end - 1], set))
 			end--;
 		else
-			break;
+			break ;
 	}
-	str = (char*)malloc(sizeof(*s1) * (end - start + 1));
+	str = (char *)malloc(sizeof(*s1) * (end - start + 1));
 	if (str == NULL)
 		return (NULL);
 	ft_memcpy(str, s1 + start, end - start);

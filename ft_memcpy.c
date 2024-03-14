@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybollen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/06 13:01:00 by ybollen           #+#    #+#             */
+/*   Updated: 2024/03/06 13:01:05 by ybollen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -10,18 +20,16 @@ void	*ft_memcpy(void *dest, const void *src, size_t size)
 
 	deststr = (char *)dest;
 	srcstr = (char *)src;
-	
 	if (dest == NULL && src == NULL)
 	{
 		return (NULL);
 	}
 	i = 0;
-	while(i < size)
+	while (i < size)
 	{
 		deststr[i] = srcstr[i];
 		i++;
 	}
-
 	return (deststr);
 }
 /*
